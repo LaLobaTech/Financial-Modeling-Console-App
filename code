@@ -1,0 +1,58 @@
+// Gabriella Lobo
+using System;
+using static System.Console;
+
+namespace Program1_Hints
+{
+    internal class MarshallsRevenue
+    {
+        static void Main(string[] args)
+        {
+            // display motto with border of Ms
+            WriteLine("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+            WriteLine("M Make your vision your view. M");
+            WriteLine("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM");
+
+            // define numbers of murals
+            int numInteriorMurals, numExteriorMurals;
+            string strNumInterior, strNumExterior;
+
+            int revInteriorMurals, revExteriorMurals;
+            int revTotal;
+
+            bool comparison;
+
+            // read in numbers from console
+            Write("Enter number of interior murals scheduled >> ");
+            strNumInterior = ReadLine();
+            numInteriorMurals = Convert.ToInt32(strNumInterior);
+
+            Write("Enter number of exterior murals scheduled >> ");
+            strNumExterior = ReadLine();
+            numExteriorMurals = Convert.ToInt32(strNumExterior);
+
+            // calculate revenues
+            revInteriorMurals = numInteriorMurals * 500;
+            revExteriorMurals = numExteriorMurals * 750;
+            revTotal = revInteriorMurals + revExteriorMurals;
+
+            // compare numbers of murals
+            comparison = numInteriorMurals > numExteriorMurals;
+
+            // display results
+            WriteLine(numInteriorMurals + " interior murals are scheduled at $500.00 each for a total of "
+                      + revInteriorMurals.ToString("C"));
+
+            WriteLine(numExteriorMurals + " exterior murals are scheduled at $750.00 each for a total of "
+                      + revExteriorMurals.ToString("C"));
+
+            WriteLine("Total revenue expected is " + revTotal.ToString("C"));
+
+            WriteLine("It is " + comparison
+                      + " that there are more interior murals scheduled than exterior ones.");
+
+            WriteLine("Press any key to continue . . .");
+            ReadKey();
+        }
+    }
+}
